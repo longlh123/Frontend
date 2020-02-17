@@ -1,3 +1,40 @@
+/*
+FLEXBOX LAYOUT TEMPLATE
+Trong parent div (.container): thêm 
+1. display: flex; => tất cả các flex items trong container sẽ nằm trên 1 hàng và width của từng item sẽ 
+thay đổi theo kích thước browswer cho đến khi bằng kích thước được tạo trong css.
+Note: + display: inline-flex;  => tất cả các flex items trong container sẽ nằm trên 1 hàng và 
+width của từng flex sẽ cố định theo kích thước được đặt trong css
+
+2. flex-flow: row|row-reverse|column|column-reverse nowrap|wrap;
+
+nowrap: flex sẽ bị che khi thu nhỏ kích thước browser
+wrap: flex sẽ tự động xuống dòng khi thu nhỏ kích thước browswer và ngược lại
+
+column: các flexs sẽ xếp theo 1 column (main canh từ trên xuống flex-1 => flex-6)
+column-reverse: các flexs sẽ xếp theo 1 column (main canh từ dưới lên flex-6 => flex-1)
+row-reverse: các flexs sẽ xếp theo 1 row (main canh theo lề phải)
+row: các flexs sẽ xếp theo 1 row (main canh theo lề trái)
+
+3. align-items: stretch;
+stretch: width của flexs thay đổi theo kích thước của browser.
+center: các flexs canh theo center
+flex-start: các flex bắt đầu từ đỉnh của parent
+
+4. justify-content: center;
+center: thay đổi kích thước container và flexs tùy theo kích thước của browser.
+
+5. align-content: center;
+center: giữ cho các flex khi xuống dòng luôn nằm liền kề nhau. (nếu không có, các flex khi xuống dòng sẽ 
+phụ thuộc vào height của parent).
+flex-start: các flex bắt đầu từ đỉnh của parent
+
+Trong flex-n div: thêm
+order: 1;: xác định vị trí của từng flexs
+align-self: flex-end;: canh vị trí của từng flex
+flex: 1 1 auto;
+*/
+
 *{
     margin: 0;
     padding: 0;
@@ -8,14 +45,6 @@
     color: #fff;
     background-color: #5995DA;
     padding: 20px 0;
-}
-
-.menu{
-    border: 1px solid #fff;
-    width: 900px;
-}
-
-.menu-container{
     display: flex;
     justify-content: center;
 }
@@ -35,4 +64,72 @@
 
 .login{
     margin-left: 20px;
+}
+
+.header-container{
+    color: #5995DA;
+    background-color: #D6D9FE;
+    display: flex;
+    justify-content: center;
+}
+
+.header{
+    width: 900px;
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo,
+.social,
+.subscribe{
+    border: 1px solid #5995DA;
+}
+
+.social,
+.subscribe{
+    align-self: flex-end;
+    margin-bottom: 20px;
+}
+
+.photo-grid-container {
+    display: flex;
+    justify-content: center;
+}
+  
+.photo-grid {
+    width: 900px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+  
+.photo-grid-item {
+    border: 1px solid #fff;
+    width: 300px;
+    height: 300px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+}
+  
+.footer-item {
+    border: 1px solid #fff;
+    background-color: #D6E9FE;
+    height: 200px;
+    flex: 1;
+}
+
+.footer-one,
+.footer-three {
+    background-color: #5995DA;
+    flex: initial;
+    width: 300px;
+}
+
+.footer-three {
+    flex: 2;
 }
