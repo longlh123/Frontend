@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.content{
+    padding: 15px;
+    font-size: 18px;
+    background: #dbdfe5;
+    margin-bottom: 15px;
+}
+
+.content.bg-alt{
+    background: #abb1b8;
+}
+
+.col{
+    padding: 10px 15px;
+    background: #abb1b8;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+}
